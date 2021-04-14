@@ -29,7 +29,7 @@ public class CServiceImpl extends ServiceImpl<CMapper, C> implements ICService {
             QueryWrapper<C> queryWrapper = new QueryWrapper<C>();
             queryWrapper.eq("user_id",c.get(i).getUserId());
             C temp = cMapper.selectOne(queryWrapper);
-            if(temp!=null){
+            if(temp==null){
                 cMapper.insert(c.get(i));
             }
         }
